@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujjwal's CS Quiz Master | Subject-Wise Quizzes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Subject Selection Screen -->
+    <div id="subjectScreen" class="screen active">
+        <div class="welcome-card">
+            <div class="hero-icon">🧠</div>
+            <h1>CS Quiz Master</h1>
+            <p>Choose your subject and test your skills!</p>
+            
+            <div class="subject-grid">
+                <div class="subject-card" data-subject="web">
+                    <div class="subject-icon">🌐</div>
+                    <h3>Web Dev</h3>
+                    <p>HTML/CSS/JS/React</p>
+                </div>
+                <div class="subject-card" data-subject="dsa">
+                    <div class="subject-icon">⚡</div>
+                    <h3>DSA</h3>
+                    <p>Algorithms & Data Structures</p>
+                </div>
+                <div class="subject-card" data-subject="cloud">
+                    <div class="subject-icon">☁️</div>
+                    <h3>Cloud</h3>
+                    <p>AWS/EC2/DevOps</p>
+                </div>
+                <div class="subject-card" data-subject="system">
+                    <div class="subject-icon">🔧</div>
+                    <h3>Systems</h3>
+                    <p>OS/Networking</p>
+                </div>
+            </div>
+            <div class="leaderboard-btn">
+                <i class="fas fa-trophy"></i> View Leaderboard
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quizScreen" class="screen">
+        <header>
+            <div class="back-btn"><i class="fas fa-arrow-left"></i></div>
+            <div class="stats">
+                <span>Score: <span id="score">0</span></span>
+                <span>Q: <span id="questionNum">1</span>/10</span>
+                <span><i class="fas fa-clock"></i> <span id="time">30</span>s</span>
+            </div>
+        </header>
+
+        <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+        </div>
+
+        <div class="question-container">
+            <div class="question-icon"></div>
+            <div class="question" id="question"></div>
+            <div class="options" id="options"></div>
+            <button id="nextBtn" class="next-btn" disabled><i class="fas fa-arrow-right"></i> Next</button>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="resultScreen" class="screen">
+        <div class="result-card">
+            <div class="confetti"></div>
+            <h2 id="finalScore"></h2>
+            <div id="resultMessage"></div>
+            <div class="result-actions">
+                <button onclick="restartQuiz()" class="btn primary">Play Again</button>
+                <button onclick="showLeaderboard()" class="btn secondary"><i class="fas fa-trophy"></i> Leaderboard</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaderboard Modal -->
+    <div id="leaderboardModal" class="modal">
+        <div class="modal-content">
+            <h3><i class="fas fa-trophy"></i> Top Scores</h3>
+            <div id="leaderboardList"></div>
+            <button onclick="closeLeaderboard()" class="close-modal">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
